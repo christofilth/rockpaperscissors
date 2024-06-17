@@ -8,4 +8,7 @@ The full assignment can be found [here](https://www.theodinproject.com/lessons/f
 
 ### Setup the project structure
 Created a [Git repository](https://github.com/christofilth/rockpaperscissors).
-Created blank html document with script tag, linking to external .js file.
+Created blank html document with script tag, linking to external .js file. Tested link between .html and .js with console.log().
+
+### Write the logic to get the computer choice
+Wrote pseudocode for getComputerChoice function.

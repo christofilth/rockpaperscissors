@@ -6,3 +6,10 @@
     If the number is between 66 and 100, change cpuChoice to "Scissors"
     Return cpuChoice
 */ 
+
+let cpuChoice = "none"
+
+function getComputerChoice() {
+    let ranNum = Math.floor(Math.random() * 100);
+    console.log(ranNum);
+}
