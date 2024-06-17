@@ -1,12 +1,11 @@
-/* Function getComputerChoice 
+/* function getComputerChoice 
     Create variable cpuChoice
     Create variable ranNum
     Generate a random number between 1-100, store in ranNum
     If the number is below 33, change cpuChoice to "Rock"
     If the number is between 33 and below 66, change cpuChoice to "Paper"
     If the number is between 66 and 100, change cpuChoice to "Scissors"
-    Return cpuChoice
-*/ 
+    Return cpuChoice */ 
 
 let cpuChoice = "none"
 
@@ -27,3 +26,10 @@ function getComputerChoice() {
 }
 
 console.log(getComputerChoice());
+
+/* function getHumanChoice
+    A prompt opens that asks the player if they choose rock, paper or scissors. 
+    If the player types in something wrong, tell them they made a mistake and ask to choose again
+    If the player types in rock, paper or scissors, set answer in lowercase
+    Store player answer in variable humanChoice
+    Return humanChoice */ 
