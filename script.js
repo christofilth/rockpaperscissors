@@ -11,5 +11,8 @@ let cpuChoice = "none"
 
 function getComputerChoice() {
     let ranNum = Math.floor(Math.random() * 100);
-    console.log(ranNum);
+    
+    return ranNum
 }
+
+console.log(getComputerChoice());
