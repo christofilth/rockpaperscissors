@@ -12,3 +12,6 @@ Created blank html document with script tag, linking to external .js file. Teste
 
 ### Write the logic to get the computer choice
 Wrote pseudocode for getComputerChoice function. Wrote code for getComputerChoice function. The function creates a random number from 1-100, and then returns either the words Rock, Paper or Scissors depending on the range of the number, 1-33 = Rock etc. Code tested in browser console. 
+
+### Write the logic to get the human choice
+

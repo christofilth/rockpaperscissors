@@ -12,6 +12,7 @@ let cpuChoice = "none"
 
 function getComputerChoice() {
     let ranNum = Math.floor(Math.random() * 100);
+    console.log(ranNum);
     if (ranNum <= 32) {
         cpuChoice = "Rock"
     } 
