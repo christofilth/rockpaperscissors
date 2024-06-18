@@ -12,13 +12,13 @@ let cpuChoice = "none"
 function getComputerChoice() {
     let ranNum = Math.floor(Math.random() * 100);
     console.log(ranNum);
-    if (ranNum <= 32) {
+    if (ranNum <= 33) {
         cpuChoice = "Rock"
     } 
-    else if (ranNum >= 33 && ranNum <= 65) {
+    else if (ranNum >= 34 && ranNum <= 66) {
         cpuChoice = "Paper"
     }
-    else if (ranNum >= 66 && ranNum <=100) {
+    else if (ranNum >= 67 && ranNum <=100) {
         cpuChoice = "Scissors"
     }
 
@@ -72,7 +72,24 @@ console.log("Human choice is", getHumanChoice());
 let humanScore = 0;
 let cpuScore = 0;
 
+/* function playRound(humanChoice, cpuChoice)
+    If humanChoice and cpuChoice are the same, then no points are added for either
+    If humanChoice is rock and cpuChoice is scissors, humanScore +1
+    If humanChoice is paper and cpuChoice is rock, humanScore +1
+    If humanChoice is scissors and cpuChoice is paper, humanScore +1
+    If humanchoice is rock and cpuChoice is paper, cpuChoice +1
+    If humanChoice is paper and cpuChoice is scissors, cpuChoice +1
+    If humanchoice is scissors and cpuchoice is rock, cpuchoice +1
 
+
+
+
+const humanSelection = getHumanChoice();
+const cpuSelection = getComputerChoice();
+
+playRound(humanSelection, cpuSelection);
+
+*/
 
 
 
