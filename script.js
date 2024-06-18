@@ -18,7 +18,7 @@ function getComputerChoice() {
     else if (ranNum >= 34 && ranNum <= 66) {
         cpuChoice = "Paper"
     }
-    else if (ranNum >= 67 && ranNum <=100) {
+    else if (ranNum >= 67 && ranNum <= 100) {
         cpuChoice = "Scissors"
     }
 
@@ -131,6 +131,16 @@ playRound(humanSelection, cpuSelection);
 
 console.log(humanSelection, cpuSelection);
 console.log(humanScore, cpuScore)
+
+/* function playGame() 
+    Insert playRound, score variables and selection variables
+    Declare variable gameRound = 0
+    While gameRound is less than 5, game calls playRound
+    Everytime playRound is complete, it adds +1 to gameRound
+    When gameRound reaches 5, the game is finished and presents the score
+    to the player with one message if you win, one message if you lose
+    and one message if you draw.
+*/
 
 
 

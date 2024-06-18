@@ -18,3 +18,6 @@ Wrote pseudocode for getHumanChoice. Wrote code for getHumanChoice. The function
 
 ### Write the logic to play a single round
 Created variables to store the player score and computer score. Wrote pseudocode for playRound function. Wrote code for playRound. The function checks humanChoice and cpuChoice against each other, and depending on the rule e.g. Paper beats Rock, gives a point to the correct player. 
+
+### Write the logic to play the entire game
+Wrote pseudocode for playGame function.
