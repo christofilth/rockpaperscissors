@@ -29,29 +29,37 @@ console.log("Computer choice is", getComputerChoice());
 
 /* function getHumanChoice
     A prompt opens that asks the player if they choose rock, paper or scissors. 
-    If the player types in something wrong, record error.
+    If the player types in something wrong, send an error and restart loop.
     If the player types in rock, paper or scissors, set answer in lowercase
     Store player answer in variable humanChoice
     Return humanChoice */ 
 
 
 function getHumanChoice() {
-    let humanChoice = prompt("Rock, Paper or Scissors?");
+    let humanChoice;
+    let choiceMade = false;
+
+    while (!choiceMade) {
+
+        humanChoice = prompt("Rock, Paper or Scissors?");
 
     if (humanChoice.toLowerCase() === "rock") {
         humanChoice = "Rock";
+        choiceMade = true;
     }
     else if (humanChoice.toLowerCase() === "paper") {
         humanChoice = "Paper";
+        choiceMade = true;
     }
     else if (humanChoice.toLowerCase() === "scissors") {
         humanChoice = "Scissors";
+        choiceMade = true;
     }
     else {
-         humanChoice = "Error";
+        alert("Sorry, please enter only Rock, Paper or Scissors")
     }
     
-
+}
 
 
     return humanChoice;
@@ -59,7 +67,7 @@ function getHumanChoice() {
 
 console.log("Human choice is", getHumanChoice());
 
-/* Ask player again if they entered an error */
+
 
 
 
