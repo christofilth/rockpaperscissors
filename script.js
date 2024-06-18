@@ -67,6 +67,11 @@ function getHumanChoice() {
 
 console.log("Human choice is", getHumanChoice());
 
+/* PLAYER SCORE VARIABLES */
+
+let humanScore = 0;
+let cpuScore = 0;
+
 
 
 
