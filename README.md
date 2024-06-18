@@ -17,4 +17,4 @@ Wrote pseudocode for getComputerChoice function. Wrote code for getComputerChoic
 Wrote pseudocode for getHumanChoice. Wrote code for getHumanChoice. The function creates a prompt to ask the player for Rock, Paper or Scissors, sets it as lowercase, and stores it in the variable humanChoice. If the player enters anything that isn't Rock, Paper or Scissors, the player receives an error and the loop restarts. 
 
 ### Write the logic to play a single round
-Created variables to store the player score and computer score. Wrote pseudocode for playRound function.
+Created variables to store the player score and computer score. Wrote pseudocode for playRound function. Wrote code for playRound. The function checks humanChoice and cpuChoice against each other, and depending on the rule e.g. Paper beats Rock, gives a point to the correct player. 
