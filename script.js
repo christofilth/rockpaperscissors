@@ -25,15 +25,12 @@ function getComputerChoice() {
     return cpuChoice 
 }
 
-/* console.log("Computer choice is", getComputerChoice()); */
-
 /* function getHumanChoice
     A prompt opens that asks the player if they choose rock, paper or scissors. 
     If the player types in something wrong, send an error and restart loop.
     If the player types in rock, paper or scissors, set answer in lowercase
     Store player answer in variable humanChoice
     Return humanChoice */ 
-
 
 function getHumanChoice() {
     let humanChoice;
@@ -60,17 +57,8 @@ function getHumanChoice() {
     }
     
 }
-
-
     return humanChoice;
 }
-
-/* console.log("Human choice is", getHumanChoice());
-
-/* PLAYER SCORE VARIABLES */
-
-let humanScore = 0;
-let cpuScore = 0;
 
 /* function playRound(humanChoice, cpuChoice)
     If humanChoice and cpuChoice are the same, then no points are added for either
@@ -91,47 +79,6 @@ playRound(humanSelection, cpuSelection);
 
 */
 
-function playRound(humanChoice, cpuChoice) {
-
-    if (humanChoice === "Rock" && cpuChoice === "Scissors") {
-        humanScore++;
-        alert("Nice! Rock beats Scissors!")
-    }
-    else if (humanChoice === "Paper" && cpuChoice === "Rock") {
-        humanScore++;
-        alert("Wahey! Paper beats Rock!")
-    }
-    else if (humanChoice === "Scissors" && cpuChoice === "Paper") {
-        humanScore++;
-        alert("Great! Scissors beats Paper!")
-    }
-    else if (humanChoice === "Rock" && cpuChoice === "Paper") {
-        cpuScore++;
-        alert("Boo! Rock loses to Paper!")
-    }
-    else if (humanChoice === "Paper" && cpuChoice === "Scissors") {
-        cpuScore++;
-        alert("Oh no! Paper loses to Scissors!")
-    }
-    else if (humanChoice === "Scissors" && cpuChoice === "Rock") {
-        cpuScore++;
-        alert("Yikes! Scissors loses to Rock!")
-    }
-    else {
-        humanScore +0
-        cpuScore +0
-        alert(`${humanChoice} vs ${cpuChoice}. It's a draw!`)
-    }
-}
-
-const humanSelection = getHumanChoice();
-const cpuSelection = getComputerChoice();
-
-playRound(humanSelection, cpuSelection);
-
-console.log(humanSelection, cpuSelection);
-console.log(humanScore, cpuScore)
-
 /* function playGame() 
     Insert playRound, score variables and selection variables
     Declare variable gameRound = 0
@@ -142,5 +89,74 @@ console.log(humanScore, cpuScore)
     and one message if you draw.
 */
 
+let humanScore = 0;
+let cpuScore = 0;
+
+function playGame() {
+
+    function playRound(humanChoice, cpuChoice) {
+
+        if (humanChoice === "Rock" && cpuChoice === "Scissors") {
+            humanScore++;
+            alert("Nice! Rock beats Scissors!")
+        }
+        else if (humanChoice === "Paper" && cpuChoice === "Rock") {
+            humanScore++;
+            alert("Wahey! Paper beats Rock!")
+        }
+        else if (humanChoice === "Scissors" && cpuChoice === "Paper") {
+            humanScore++;
+            alert("Great! Scissors beats Paper!")
+        }
+        else if (humanChoice === "Rock" && cpuChoice === "Paper") {
+            cpuScore++;
+            alert("Boo! Rock loses to Paper!")
+        }
+        else if (humanChoice === "Paper" && cpuChoice === "Scissors") {
+            cpuScore++;
+            alert("Oh no! Paper loses to Scissors!")
+        }
+        else if (humanChoice === "Scissors" && cpuChoice === "Rock") {
+            cpuScore++;
+            alert("Yikes! Scissors loses to Rock!")
+        }
+        else {
+            humanScore +0
+            cpuScore +0
+            alert(`${humanChoice} vs ${cpuChoice}. It's a draw!`)
+        }
+    }
+    
+    
+    let gameRound = 0;
+
+    while (gameRound <5) {
+        const humanSelection = getHumanChoice();
+        const cpuSelection = getComputerChoice();
+
+        console.log(humanSelection, cpuSelection);
+
+        playRound(humanSelection, cpuSelection);
+        gameRound++;
+        
+        if (gameRound === 5) {
+            if (humanScore > cpuScore) {
+                alert(`Congratulations! You win ${humanScore} - ${cpuScore}`);
+                alert("Thanks for playing!");
+            }
+            else if (humanScore < cpuScore) {
+                alert(`Oh no! You lose ${humanScore} - ${cpuScore}`);
+                alert("Thanks for playing!");
+            }
+            else {
+                alert(`Huh!? You Draw ${humanScore} - ${cpuScore}`);
+                alert("Thanks for playing!");
+            }
+        }
+    }
+}
 
 
+
+playGame();
+console.log(humanScore, cpuScore)
