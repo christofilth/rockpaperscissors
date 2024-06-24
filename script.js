@@ -147,6 +147,8 @@ function playRound(humanChoice, cpuChoice) {
     }
 }
 
+
+
 const container = document.querySelector("#container");
 
 const rock = document.createElement("button");
@@ -165,28 +167,46 @@ scissors.textContent = "Scissors";
 scoreDisplay.textContent = "0 - 0";
 
 let humanChoice;
-const cpuSelection = getComputerChoice();
+let gameRound = 0;
+
+function endGame() {
+    rock.disabled = true;
+    paper.disabled = true;
+    scissors.disabled = true;
+    let winner = humanScore > cpuScore ? "You win!" : (cpuScore > humanScore ? "CPU wins!" : "It's a tie!");
+    scoreDisplay.textContent = `${humanScore} - ${cpuScore} | ${winner}`;
+}
 
 rock.addEventListener("click", () => {
     humanChoice = "Rock";
-    playRound(humanChoice, cpuSelection);
+    playRound(humanChoice, getComputerChoice());
+    gameRound++
     console.log(humanChoice, cpuChoice);
-    scoreDisplay.textContent = `${humanScore} - ${cpuScore}`
+    scoreDisplay.textContent = `${humanChoice} vs ${cpuChoice}, ${humanScore} - ${cpuScore}`;
+    if (gameRound === 5) {
+        endGame();
+    }
 });
 paper.addEventListener("click", () => {
     humanChoice = "Paper";
-    playRound(humanChoice, cpuSelection);
+    playRound(humanChoice, getComputerChoice());
+    gameRound++
     console.log(humanChoice, cpuChoice);
-    scoreDisplay.textContent = `${humanScore} - ${cpuScore}`
+    scoreDisplay.textContent = `${humanChoice} vs ${cpuChoice}, ${humanScore} - ${cpuScore}`;
+    if (gameRound === 5) {
+        endGame();
+    }
 });
 scissors.addEventListener("click", () => {
     humanChoice = "Scissors";
-    playRound(humanChoice, cpuSelection);
+    playRound(humanChoice, getComputerChoice());
+    gameRound++
     console.log(humanChoice, cpuChoice);
-    scoreDisplay.textContent = `${humanScore} - ${cpuScore}`
+    scoreDisplay.textContent = `${humanChoice} vs ${cpuChoice}, ${humanScore} - ${cpuScore}`;
+    if (gameRound === 5) {
+        endGame();
+    }
 });
-
-
 
 
 
