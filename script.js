@@ -1,12 +1,3 @@
-/* function getComputerChoice 
-    Create variable cpuChoice
-    Create variable ranNum
-    Generate a random number between 1-100, store in ranNum
-    If the number is below 33, change cpuChoice to "Rock"
-    If the number is between 33 and below 66, change cpuChoice to "Paper"
-    If the number is between 66 and 100, change cpuChoice to "Scissors"
-    Return cpuChoice */ 
-
 let cpuChoice = "none"
 
 function getComputerChoice() {
@@ -25,12 +16,6 @@ function getComputerChoice() {
     return cpuChoice 
 }
 
-/* function getHumanChoice
-    A prompt opens that asks the player if they choose rock, paper or scissors. 
-    If the player types in something wrong, send an error and restart loop.
-    If the player types in rock, paper or scissors, set answer in lowercase
-    Store player answer in variable humanChoice
-    Return humanChoice */ 
 
 function getHumanChoice() {
     let humanChoice;
@@ -60,37 +45,11 @@ function getHumanChoice() {
     return humanChoice;
 }
 
-/* function playRound(humanChoice, cpuChoice)
-    If humanChoice and cpuChoice are the same, then no points are added for either
-    If humanChoice is rock and cpuChoice is scissors, humanScore +1
-    If humanChoice is paper and cpuChoice is rock, humanScore +1
-    If humanChoice is scissors and cpuChoice is paper, humanScore +1
-    If humanchoice is rock and cpuChoice is paper, cpuChoice +1
-    If humanChoice is paper and cpuChoice is scissors, cpuChoice +1
-    If humanchoice is scissors and cpuchoice is rock, cpuchoice +1
-
-
-
-
-const humanSelection = getHumanChoice();
-const cpuSelection = getComputerChoice();
-
-playRound(humanSelection, cpuSelection);
-
-*/
-
-/* function playGame() 
-    Insert playRound, score variables and selection variables
-    Declare variable gameRound = 0
-    While gameRound is less than 5, game calls playRound
-    Everytime playRound is complete, it adds +1 to gameRound
-    When gameRound reaches 5, the game is finished and presents the score
-    to the player with one message if you win, one message if you lose
-    and one message if you draw.
-*/
 
 let humanScore = 0;
 let cpuScore = 0;
+
+/*
 
 function playGame() {
 
@@ -136,7 +95,7 @@ function playGame() {
 
         console.log(humanSelection, cpuSelection);
 
-        playRound(humanSelection, cpuSelection);
+        playRound(humanSelection, cpuSelection); 
         gameRound++;
         
         if (gameRound === 5) {
@@ -153,10 +112,41 @@ function playGame() {
                 alert("Thanks for playing!");
             }
         }
+    } 
+}
+
+*/
+
+function playRound(humanChoice, cpuChoice) {
+
+    if (humanChoice === "Rock" && cpuChoice === "Scissors") {
+        humanScore++;
+    }
+    else if (humanChoice === "Paper" && cpuChoice === "Rock") {
+        humanScore++;
+    }
+    else if (humanChoice === "Scissors" && cpuChoice === "Paper") {
+        humanScore++;
+    }
+    else if (humanChoice === "Rock" && cpuChoice === "Paper") {
+        cpuScore++;
+    }
+    else if (humanChoice === "Paper" && cpuChoice === "Scissors") {
+        cpuScore++;
+    }
+    else if (humanChoice === "Scissors" && cpuChoice === "Rock") {
+        cpuScore++;
+    }
+    else {
+        humanScore +0
+        cpuScore +0
     }
 }
 
+const humanSelection = getHumanChoice();
+const cpuSelection = getComputerChoice();
 
+console.log(humanSelection, cpuSelection);
 
-playGame();
+playRound(humanSelection, cpuSelection);
 console.log(humanScore, cpuScore)
