@@ -48,6 +48,8 @@ const rock = document.createElement("button");
 const paper = document.createElement("button");
 const scissors = document.createElement("button");
 const scoreDisplay = document.createElement("div");
+const buttonContainer = document.createElement("div");
+const displayContainer = document.createElement("div");
 
 rock.classList.add("Rock")
 paper.classList.add("Paper")
@@ -85,7 +87,9 @@ rock.addEventListener("click", () => makeChoice("Rock"));
 paper.addEventListener("click", () => makeChoice("Paper"));
 scissors.addEventListener("click", () => makeChoice("Scissors"));
     
-container.appendChild(rock);
-container.appendChild(paper);
-container.appendChild(scissors);
-container.appendChild(scoreDisplay);
+buttonContainer.appendChild(rock);
+buttonContainer.appendChild(paper);
+buttonContainer.appendChild(scissors);
+displayContainer.appendChild(scoreDisplay);
+container.appendChild(buttonContainer);
+container.appendChild(displayContainer);
