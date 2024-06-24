@@ -55,6 +55,8 @@ rock.classList.add("Rock")
 paper.classList.add("Paper")
 scissors.classList.add("Scissors")
 scoreDisplay.classList.add("scoreDisplay")
+buttonContainer.classList.add("buttonContainer")
+displayContainer.classList.add("displayContainer")
 
 rock.textContent = "Rock";
 paper.textContent = "Paper";
@@ -77,7 +79,7 @@ function makeChoice(choice){
     playRound(humanChoice, getComputerChoice());
     gameRound++;
     console.log(humanChoice, cpuChoice);
-    scoreDisplay.textContent = `${humanChoice} vs ${cpuChoice}, ${humanScore} - ${cpuScore}`;
+    scoreDisplay.textContent = `${humanScore} - ${cpuScore} | ${humanChoice} vs ${cpuChoice}`;
     if (gameRound === 5) {
         endGame();
     }
