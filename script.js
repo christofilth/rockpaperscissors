@@ -1,3 +1,25 @@
+const container = document.querySelector("#container");
+
+const rock = document.createElement("button");
+const paper = document.createElement("button");
+const scissors = document.createElement("button");
+
+rock.classList.add("Rock")
+paper.classList.add("Paper")
+scissors.classList.add("Scissors")
+
+rock.textContent = "Rock";
+paper.textContent = "Paper";
+scissors.textContent = "Scissors";
+
+container.appendChild(rock);
+container.appendChild(paper);
+container.appendChild(scissors);
+
+
+
+
+
 let cpuChoice = "none"
 
 function getComputerChoice() {

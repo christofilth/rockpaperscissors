@@ -23,4 +23,4 @@ Created variables to store the player score and computer score. Wrote pseudocode
 Wrote pseudocode for playGame function. Wrote code for playGame. playGame includes the function playRound. The gameRound variable starts at 0, every time playRound is called gameRound is incremented by 1. When gameRound = 5, the game ends, giving the player a score and letting them know if they Win/Lose/Draw. 
 
 ### Update game to include UI
-Altered code to remove rounds. Cleaned up comments in script.js.
+Altered code to remove rounds. Cleaned up comments in script.js. Added buttons to represent Rock, Paper and Scissors choices for the player.
