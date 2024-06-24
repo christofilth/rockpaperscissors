@@ -1,108 +1,3 @@
-
-
-/*
-
-function getHumanChoice() {
-    let humanChoice;
-    let choiceMade = false;
-
-    while (!choiceMade) {
-
-        humanChoice = prompt("Rock, Paper or Scissors?");
-
-    if (humanChoice.toLowerCase() === "rock") {
-        humanChoice = "Rock";
-        choiceMade = true;
-    }
-    else if (humanChoice.toLowerCase() === "paper") {
-        humanChoice = "Paper";
-        choiceMade = true;
-    }
-    else if (humanChoice.toLowerCase() === "scissors") {
-        humanChoice = "Scissors";
-        choiceMade = true;
-    }
-    else {
-        alert("Sorry, please enter only Rock, Paper or Scissors")
-    }
-    
-}
-    return humanChoice;
-}
-
-*/
-
-
-
-
-/*
-
-function playGame() {
-
-    function playRound(humanChoice, cpuChoice) {
-
-        if (humanChoice === "Rock" && cpuChoice === "Scissors") {
-            humanScore++;
-            alert("Nice! Rock beats Scissors!")
-        }
-        else if (humanChoice === "Paper" && cpuChoice === "Rock") {
-            humanScore++;
-            alert("Wahey! Paper beats Rock!")
-        }
-        else if (humanChoice === "Scissors" && cpuChoice === "Paper") {
-            humanScore++;
-            alert("Great! Scissors beats Paper!")
-        }
-        else if (humanChoice === "Rock" && cpuChoice === "Paper") {
-            cpuScore++;
-            alert("Boo! Rock loses to Paper!")
-        }
-        else if (humanChoice === "Paper" && cpuChoice === "Scissors") {
-            cpuScore++;
-            alert("Oh no! Paper loses to Scissors!")
-        }
-        else if (humanChoice === "Scissors" && cpuChoice === "Rock") {
-            cpuScore++;
-            alert("Yikes! Scissors loses to Rock!")
-        }
-        else {
-            humanScore +0
-            cpuScore +0
-            alert(`${humanChoice} vs ${cpuChoice}. It's a draw!`)
-        }
-    }
-    
-    
-    let gameRound = 0;
-
-    while (gameRound <5) {
-        const humanSelection = getHumanChoice();
-        const cpuSelection = getComputerChoice();
-
-        console.log(humanSelection, cpuSelection);
-
-        playRound(humanSelection, cpuSelection); 
-        gameRound++;
-        
-        if (gameRound === 5) {
-            if (humanScore > cpuScore) {
-                alert(`Congratulations! You win ${humanScore} - ${cpuScore}`);
-                alert("Thanks for playing!");
-            }
-            else if (humanScore < cpuScore) {
-                alert(`Oh no! You lose ${humanScore} - ${cpuScore}`);
-                alert("Thanks for playing!");
-            }
-            else {
-                alert(`Huh!? You Draw ${humanScore} - ${cpuScore}`);
-                alert("Thanks for playing!");
-            }
-        }
-    } 
-}
-
-*/
-
 let cpuChoice = "none"
 function getComputerChoice() {
     let ranNum = Math.floor(Math.random() * 100);
@@ -146,8 +41,6 @@ function playRound(humanChoice, cpuChoice) {
         cpuScore +0
     }
 }
-
-
 
 const container = document.querySelector("#container");
 
@@ -208,15 +101,7 @@ scissors.addEventListener("click", () => {
     }
 });
 
-
-
 container.appendChild(rock);
 container.appendChild(paper);
 container.appendChild(scissors);
 container.appendChild(scoreDisplay);
-
-
-
-
-
-
