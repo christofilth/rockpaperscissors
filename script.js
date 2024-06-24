@@ -152,14 +152,17 @@ const container = document.querySelector("#container");
 const rock = document.createElement("button");
 const paper = document.createElement("button");
 const scissors = document.createElement("button");
+const scoreDisplay = document.createElement("div");
 
 rock.classList.add("Rock")
 paper.classList.add("Paper")
 scissors.classList.add("Scissors")
+scoreDisplay.classList.add("scoreDisplay")
 
 rock.textContent = "Rock";
 paper.textContent = "Paper";
 scissors.textContent = "Scissors";
+scoreDisplay.textContent = "0 - 0";
 
 let humanChoice;
 const cpuSelection = getComputerChoice();
@@ -168,26 +171,29 @@ rock.addEventListener("click", () => {
     humanChoice = "Rock";
     playRound(humanChoice, cpuSelection);
     console.log(humanChoice, cpuChoice);
-    console.log(humanScore, cpuScore);
+    scoreDisplay.textContent = `${humanScore} - ${cpuScore}`
 });
 paper.addEventListener("click", () => {
     humanChoice = "Paper";
     playRound(humanChoice, cpuSelection);
     console.log(humanChoice, cpuChoice);
-    console.log(humanScore, cpuScore);
+    scoreDisplay.textContent = `${humanScore} - ${cpuScore}`
 });
 scissors.addEventListener("click", () => {
     humanChoice = "Scissors";
     playRound(humanChoice, cpuSelection);
     console.log(humanChoice, cpuChoice);
-    console.log(humanScore, cpuScore);
+    scoreDisplay.textContent = `${humanScore} - ${cpuScore}`
 });
+
+
 
 
 
 container.appendChild(rock);
 container.appendChild(paper);
 container.appendChild(scissors);
+container.appendChild(scoreDisplay);
 
 
 
