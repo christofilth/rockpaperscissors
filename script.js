@@ -49,9 +49,9 @@ const paper = document.createElement("button");
 const scissors = document.createElement("button");
 const scoreDisplay = document.createElement("div");
 
-rock.classList.add("Rock", "btn")
-paper.classList.add("Paper", "btn")
-scissors.classList.add("Scissors", "btn")
+rock.classList.add("Rock")
+paper.classList.add("Paper")
+scissors.classList.add("Scissors")
 scoreDisplay.classList.add("scoreDisplay")
 
 rock.textContent = "Rock";
