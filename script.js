@@ -48,20 +48,28 @@ const rock = document.createElement("button");
 const paper = document.createElement("button");
 const scissors = document.createElement("button");
 const scoreDisplay = document.createElement("div");
+const roundDisplay = document.createElement("div");
 const buttonContainer = document.createElement("div");
 const displayContainer = document.createElement("div");
+const choiceDisplay = document.createElement("div");
+const choiceContainer = document.createElement("div");
 
 rock.classList.add("Rock")
 paper.classList.add("Paper")
 scissors.classList.add("Scissors")
 scoreDisplay.classList.add("scoreDisplay")
+roundDisplay.classList.add("roundDisplay")
 buttonContainer.classList.add("buttonContainer")
 displayContainer.classList.add("displayContainer")
+choiceDisplay.classList.add("choiceDisplay")
+choiceContainer.classList.add("choiceContainer")
 
 rock.textContent = "Rock";
 paper.textContent = "Paper";
 scissors.textContent = "Scissors";
 scoreDisplay.textContent = "0 - 0";
+roundDisplay.textContent = `0/5`;
+choiceDisplay.textContent = "You vs CPU";
 
 let humanChoice;
 let gameRound = 0;
@@ -79,7 +87,9 @@ function makeChoice(choice){
     playRound(humanChoice, getComputerChoice());
     gameRound++;
     console.log(humanChoice, cpuChoice);
-    scoreDisplay.textContent = `${humanScore} - ${cpuScore} | ${humanChoice} vs ${cpuChoice}`;
+    scoreDisplay.textContent = `${humanScore} - ${cpuScore}`;
+    roundDisplay.textContent = `${gameRound}/5`;
+    choiceDisplay.textContent = `You: ${humanChoice} | CPU: ${cpuChoice}`;
     if (gameRound === 5) {
         endGame();
     }
@@ -88,10 +98,15 @@ function makeChoice(choice){
 rock.addEventListener("click", () => makeChoice("Rock"));
 paper.addEventListener("click", () => makeChoice("Paper"));
 scissors.addEventListener("click", () => makeChoice("Scissors"));
+
+
     
 buttonContainer.appendChild(rock);
 buttonContainer.appendChild(paper);
 buttonContainer.appendChild(scissors);
 displayContainer.appendChild(scoreDisplay);
+displayContainer.appendChild(roundDisplay);
+choiceContainer.appendChild(choiceDisplay);
 container.appendChild(buttonContainer);
 container.appendChild(displayContainer);
+container.appendChild(choiceContainer);

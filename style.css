@@ -2,14 +2,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: antiquewhite;
 }
 
 #container {
+    background-color: mediumaquamarine;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    padding: 20px;
+    border-width: 5px;
+    border-radius: 15px;
     gap: 5px;
+    margin-top: 50px;
 }
 
 .buttonContainer {
@@ -18,20 +24,54 @@ body {
 }
 
 .scoreDisplay {
+    margin-left: 5px;
+}
+
+.roundDisplay {
+    margin-right: 5px;
+}
+
+.displayContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 310px;
     font-size: x-large;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bolder;
-    margin-left: 5px;
+}
+
+.choiceContainer {
+    display: flex;
+    width: 310px;
+    justify-content: center;
+    align-items: center;
+}
+
+.choiceDisplay {
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    text-align: center;
+    width: 275px;
+    padding: 3px;
+    background-color: antiquewhite;
+    border-radius: 5px;
+    margin-top: 10px;
 }
 
 button {
     background-color: seagreen;
     color: white;
-    border-color: black;
+    border-color: white;
     border-width: 5px;
     border-radius: 10px;
     width: 100px;
     height: 75px;
     text-align: center;
-    font-size: large;
+    font-size: large; 
+}
+
+button:hover {
+    background-color:lightgreen;
 }
