@@ -70,37 +70,21 @@ function endGame() {
     scoreDisplay.textContent = `${humanScore} - ${cpuScore} | ${winner}`;
 }
 
-rock.addEventListener("click", () => {
-    humanChoice = "Rock";
+function makeChoice(choice){
+    humanChoice = choice;
     playRound(humanChoice, getComputerChoice());
-    gameRound++
+    gameRound++;
     console.log(humanChoice, cpuChoice);
     scoreDisplay.textContent = `${humanChoice} vs ${cpuChoice}, ${humanScore} - ${cpuScore}`;
     if (gameRound === 5) {
         endGame();
     }
-});
-paper.addEventListener("click", () => {
-    humanChoice = "Paper";
-    playRound(humanChoice, getComputerChoice());
-    gameRound++
-    console.log(humanChoice, cpuChoice);
-    scoreDisplay.textContent = `${humanChoice} vs ${cpuChoice}, ${humanScore} - ${cpuScore}`;
-    if (gameRound === 5) {
-        endGame();
-    }
-});
-scissors.addEventListener("click", () => {
-    humanChoice = "Scissors";
-    playRound(humanChoice, getComputerChoice());
-    gameRound++
-    console.log(humanChoice, cpuChoice);
-    scoreDisplay.textContent = `${humanChoice} vs ${cpuChoice}, ${humanScore} - ${cpuScore}`;
-    if (gameRound === 5) {
-        endGame();
-    }
-});
+}
 
+rock.addEventListener("click", () => makeChoice("Rock"));
+paper.addEventListener("click", () => makeChoice("Paper"));
+scissors.addEventListener("click", () => makeChoice("Scissors"));
+    
 container.appendChild(rock);
 container.appendChild(paper);
 container.appendChild(scissors);
