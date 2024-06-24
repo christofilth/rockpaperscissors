@@ -1,43 +1,6 @@
-const container = document.querySelector("#container");
-
-const rock = document.createElement("button");
-const paper = document.createElement("button");
-const scissors = document.createElement("button");
-
-rock.classList.add("Rock")
-paper.classList.add("Paper")
-scissors.classList.add("Scissors")
-
-rock.textContent = "Rock";
-paper.textContent = "Paper";
-scissors.textContent = "Scissors";
-
-container.appendChild(rock);
-container.appendChild(paper);
-container.appendChild(scissors);
 
 
-
-
-
-let cpuChoice = "none"
-
-function getComputerChoice() {
-    let ranNum = Math.floor(Math.random() * 100);
-    /* console.log(ranNum); */
-    if (ranNum <= 33) {
-        cpuChoice = "Rock"
-    } 
-    else if (ranNum >= 34 && ranNum <= 66) {
-        cpuChoice = "Paper"
-    }
-    else if (ranNum >= 67 && ranNum <= 100) {
-        cpuChoice = "Scissors"
-    }
-
-    return cpuChoice 
-}
-
+/*
 
 function getHumanChoice() {
     let humanChoice;
@@ -67,9 +30,10 @@ function getHumanChoice() {
     return humanChoice;
 }
 
+*/
 
-let humanScore = 0;
-let cpuScore = 0;
+
+
 
 /*
 
@@ -139,6 +103,24 @@ function playGame() {
 
 */
 
+let cpuChoice = "none"
+function getComputerChoice() {
+    let ranNum = Math.floor(Math.random() * 100);
+    if (ranNum <= 33) {
+        cpuChoice = "Rock"
+    } 
+    else if (ranNum >= 34 && ranNum <= 66) {
+        cpuChoice = "Paper"
+    }
+    else if (ranNum >= 67 && ranNum <= 100) {
+        cpuChoice = "Scissors"
+    }
+
+    return cpuChoice 
+}
+
+let humanScore = 0;
+let cpuScore = 0;
 function playRound(humanChoice, cpuChoice) {
 
     if (humanChoice === "Rock" && cpuChoice === "Scissors") {
@@ -165,10 +147,50 @@ function playRound(humanChoice, cpuChoice) {
     }
 }
 
-const humanSelection = getHumanChoice();
+const container = document.querySelector("#container");
+
+const rock = document.createElement("button");
+const paper = document.createElement("button");
+const scissors = document.createElement("button");
+
+rock.classList.add("Rock")
+paper.classList.add("Paper")
+scissors.classList.add("Scissors")
+
+rock.textContent = "Rock";
+paper.textContent = "Paper";
+scissors.textContent = "Scissors";
+
+let humanChoice;
 const cpuSelection = getComputerChoice();
 
-console.log(humanSelection, cpuSelection);
+rock.addEventListener("click", () => {
+    humanChoice = "Rock";
+    playRound(humanChoice, cpuSelection);
+    console.log(humanChoice, cpuChoice);
+    console.log(humanScore, cpuScore);
+});
+paper.addEventListener("click", () => {
+    humanChoice = "Paper";
+    playRound(humanChoice, cpuSelection);
+    console.log(humanChoice, cpuChoice);
+    console.log(humanScore, cpuScore);
+});
+scissors.addEventListener("click", () => {
+    humanChoice = "Scissors";
+    playRound(humanChoice, cpuSelection);
+    console.log(humanChoice, cpuChoice);
+    console.log(humanScore, cpuScore);
+});
 
-playRound(humanSelection, cpuSelection);
-console.log(humanScore, cpuScore)
+
+
+container.appendChild(rock);
+container.appendChild(paper);
+container.appendChild(scissors);
+
+
+
+
+
+
